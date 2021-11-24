@@ -43,4 +43,12 @@ app.put('/cursos/:index',checkCurso,(req,res)=>{
     cursos[index] = name
     res.json(cursos)
 })
+/* Deletando  */
+app.delete('/cursos/:index',(req,res)=>{
+    const {index}= req.params
+
+    cursos.splice(index,0)
+
+    res.json(cursos)
+})
 app.listen(porta,()=>console.log("rodando o servidor"))
